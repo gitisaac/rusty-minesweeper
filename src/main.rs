@@ -28,7 +28,7 @@ impl Component for CounterComponent {
     // similar to React's render function
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
-            <div>
+            <div class="container">
                 <p>{ self.value }</p>
                 <button onclick={ctx.link().callback(|_| Msg::AddOne)}>{ "Add one" }</button>
             </div>
