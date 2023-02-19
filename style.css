@@ -26,3 +26,19 @@
     align-content: center;
     justify-content: center;
 }
+
+.grid {
+    display: grid;
+    padding: 5px;
+}
+.row {
+    display: flex;
+}
+.cell {
+    width: 2em;
+    height: 2em;
+    background: #c0c0c0;
+    box-sizing: border-box;
+    border: solid #808080;
+    border-width: 0 1px 1px 0;
+}
