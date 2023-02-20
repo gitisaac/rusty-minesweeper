@@ -14,6 +14,7 @@ impl Component for Model {
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
+        print!("update called");
         false
     }
 

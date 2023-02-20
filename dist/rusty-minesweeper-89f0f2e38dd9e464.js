@@ -564,8 +564,8 @@ function getImports() {
         const ret = wasm.memory;
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper2037 = function(arg0, arg1, arg2) {
-        const ret = makeClosure(arg0, arg1, 112, __wbg_adapter_26);
+    imports.wbg.__wbindgen_closure_wrapper2334 = function(arg0, arg1, arg2) {
+        const ret = makeClosure(arg0, arg1, 122, __wbg_adapter_26);
         return addHeapObject(ret);
     };
 
@@ -604,7 +604,7 @@ function initSync(module) {
 
 async function init(input) {
     if (typeof input === 'undefined') {
-        input = new URL('rusty-minesweeper-e260b3960a1bcb5f_bg.wasm', import.meta.url);
+        input = new URL('rusty-minesweeper-89f0f2e38dd9e464_bg.wasm', import.meta.url);
     }
     const imports = getImports();
 

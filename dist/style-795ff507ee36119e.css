@@ -37,8 +37,19 @@
 .cell {
     width: 2em;
     height: 2em;
-    background: #c0c0c0;
     box-sizing: border-box;
     border: solid #808080;
     border-width: 0 1px 1px 0;
+}
+
+.cell:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    background: #c0c0c0;
+}
+
+.revealed {
+    background: #e1e1e1;
 }

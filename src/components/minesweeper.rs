@@ -135,12 +135,13 @@ impl Component for GameBoard {
                                         let index = row * self.size + col;
                                         let cell = &self.cells[index as usize];
                                         let class = if cell.is_revealed {
-                                            "revealed"
+                                            "cell revealed"
                                         } else {
-                                            "hidden"
+                                            "cell hidden"
                                         };
                                         html! {
-                                            <div class="cell">
+                                            // add on click handler
+                                            <div class={class} onclick={ctx.link().callback(move |_| Msg::CellClick(row.into(), col.into()))}>
                                                 {" "}
                                             </div>
                                         }
