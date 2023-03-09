@@ -15,4 +15,4 @@ Cargo.lock
 /target
 
 # we dont want dist folder in git
-/dist
+/dist/*
