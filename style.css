@@ -53,3 +53,7 @@
 .revealed {
     background: #e1e1e1;
 }
+
+.flagged {
+    background: #ff0000;
+}

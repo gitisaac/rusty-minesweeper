@@ -13,3 +13,6 @@ Cargo.lock
 # Added by cargo
 
 /target
+
+# we dont want dist folder in git
+/dist

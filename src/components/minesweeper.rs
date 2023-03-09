@@ -87,6 +87,7 @@ impl GameBoard {
 
 pub enum Msg {
     CellClick(usize, usize),
+    FlagClick(usize, usize),
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -119,6 +120,10 @@ impl Component for GameBoard {
             Msg::CellClick(x, y) => {
                 self.cells[x * self.size as usize + y].is_revealed = true;
                 true  // re-renders the component
+            },
+            Msg::FlagClick(x, y) => {
+                self.cells[x * self.size as usize + y].is_flagged = true;
+                true  // re-renders the component
             }
         }
     }
@@ -136,12 +141,19 @@ impl Component for GameBoard {
                                         let cell = &self.cells[index as usize];
                                         let class = if cell.is_revealed {
                                             "cell revealed"
+                                        } else if cell.is_flagged {
+                                            "cell flagged"
                                         } else {
                                             "cell hidden"
                                         };
                                         html! {
                                             // add on click handler
-                                            <div class={class} onclick={ctx.link().callback(move |_| Msg::CellClick(row.into(), col.into()))}>
+                                            <div class={class} 
+                                              onclick={ctx.link().callback(move |_| Msg::CellClick(row.into(), col.into()))}
+                                              oncontextmenu={ctx.link().callback(move |e: MouseEvent| {
+                                                e.prevent_default();
+                                                Msg::FlagClick(row.into(), col.into())
+                                              })}>
                                                 {" "}
                                             </div>
                                         }
